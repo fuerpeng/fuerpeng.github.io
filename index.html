@@ -3,11 +3,12 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <title>lmx</title>
+    <title>520表白</title>
     <meta
       name="viewport"
       content="width=device-width,initial-scale=0.6,user-scalable=0;minimum-scale=0.6;maximum-scale=0.6"
     />
+
     <style style="text/css">
 
 
@@ -49,6 +50,9 @@
     </style>
   </head>
   <body style="">
+    <audio id="audio" autoplay="autoplay">
+    <source src="music.mp3" type="audio/mpeg" />
+    </audio>
     <!--start top-->
     <div class="top">
       <marquee behavior="alternate"
@@ -92,10 +96,7 @@
     </div>
     <!--end text-->
     <!-- <embed src="music.mp3" hidden="true" /> -->
-    <audio id="audio-player" ref="audio" preload="preload" autoplay="autoplay">
-      <source src="music.mp3" type="audio/mpeg" />
-      Your browser does not support the audio tag.
-    </audio>
+
     <script src="js/jquery.min.js"></script>
     <!--雪花-->
     <script src="js/snow.js"></script>
@@ -129,7 +130,42 @@
         if (l == str.length) {
           clearTimeout(id)
         }
+        autoPlayMusic()
       }
+      // 音乐播放
+      function autoPlayMusic() {
+        // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+        function musicInBrowserHandler() {
+          musicPlay(true)
+          document.body.removeEventListener('touchstart', musicInBrowserHandler)
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler)
+
+        // 自动播放音乐效果，解决微信自动播放问题
+        function musicInWeixinHandler() {
+          musicPlay(true)
+          document.addEventListener(
+            'WeixinJSBridgeReady',
+            function() {
+              musicPlay(true)
+            },
+            false
+          )
+          document.removeEventListener('DOMContentLoaded', musicInWeixinHandler)
+        }
+        document.addEventListener('DOMContentLoaded', musicInWeixinHandler)
+      }
+      function musicPlay(isPlay) {
+        var media = document.getElementById('audio')
+        media.play()
+        if (isPlay && media.paused) {
+          media.play()
+        }
+        if (!isPlay && !media.paused) {
+          media.pause()
+        }
+      }
+     
     </script>
     <script>
       /*
