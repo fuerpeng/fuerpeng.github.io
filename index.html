@@ -1,48 +1,363 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Infinite Tubes with Three.js | Demo 1 | Codrops</title>
-		<meta name="description" content="Infinite WebGL tubes as seen on Fornasetti.com made with Three.js" />
-		<meta name="keywords" content="webgl, effect, tube, infinite, interactive, threejs, background, canvas" />
-		<meta name="author" content="Louis Hoebregts for Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<script>document.documentElement.className = 'js';</script>
-	</head>
-	<body class="demo-1 loading">
-		<svg class="hidden">
-			<symbol id="icon-arrow" viewBox="0 0 24 24">
-			<title>arrow</title>
-			<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
-				</symbol>
-				<symbol id="icon-drop" viewBox="0 0 24 24">
-				<title>drop</title>
-				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
-				</symbol>
-			</svg>
-			<main>
-				<header class="codrops-header">
-					<h1 class="codrops-header__title">无限管</h1>
-					<nav class="demos">
-						<a class="demo demo--current" href="index.html">砖隧道</a>
-						<a class="demo" href="index2.html">粒子</a>
-						<a class="demo" href="index3.html">星球大战</a>
-						<a class="demo" href="index4.html">血细胞</a>
-						<a class="demo" href="index5.html">三角形</a>
-						<a class="demo" href="index6.html">移动陀螺仪</a>
-					</nav>
-				</header>
-				
-				<div class="content">
-					<!-- The canvas where ThreeJs renders the WebGL -->
-					<canvas id="scene"></canvas>
-				</div>
-				
-			</main>
-			<script src="js/vendors/three.min.js"></script>
-			<script src="js/demo1.js"></script>
-		</body>
-	</html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>520表白</title>
+    <meta name="viewport" content="width=device-width,initial-scale=0.6,user-scalable=0;minimum-scale=0.6;maximum-scale=0.6">
+    <style style="text/css">
+    
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+      *{margin:0;padding:0;}
+      body{background:url("images/1.jpg");background-size:cover;}
+      /*start top*/
+      .top{width:400px;height:100px;margin:60px auto;font-size:30px;font-family:"华文行楷";color:#fff;
+      <!--background:-webkit-linear-gradient(45deg,#ff0000,#ffcc00,#ffff99,#33ccff,#00ff33,#6600ff,#333399);
+      -webkit-background-clip:text;-->}
+      /*end top*/
+      /*start box*/
+      .box{width:310px;height:310px;margin:auto;perspective:800px;/*景深*/}
+      .box .pic{position:relative;transform-style:preserve-3d;/*3d环境*/ animation:play 10s linear infinite;/*动画名称 执行时间 匀速 无限执行*/}
+      .box ul li{list-style:none;position:absolute;top:0;left:0;}
+      /*start box*/
+      /*定义一个关键帧*/
+      @keyframes play{
+      from{transform:rotateY(0deg);}
+      to{transform:rotateY(360deg);}
+      }
+      /*start text*/
+      #text{width:500px;height:200px;color:#6fade1;margin:auto;font-size:24px;font-family:"方正喵呜体";}
+      .love{
+        color: #e980b0;
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+      /*end text*/
+    </style>
+  </head>
+  <body style="">
+    <!--start top-->
+    <div class="top">
+      <marquee behavior="alternate">人世间有百媚千红，唯独你是我情之所钟</marquee>
+    </div>
+    <!--end top-->
+    <!--start box-->
+    <div class="box">
+      <div class="pic">
+        <ul>
+          <li style="transform: rotateY(0deg) translateZ(216px);">
+            <img src="images/1.png" width="" height="" alt="" />
+          </li>
+          <li style="transform: rotateY(60deg) translateZ(216px);">
+            <img src="images/2.png" width="" height="" alt="" />
+          </li>
+          <li style="transform: rotateY(120deg) translateZ(216px);">
+            <img src="images/3.png" width="" height="" alt="" />
+          </li>
+          <li style="transform: rotateY(180deg) translateZ(216px);">
+            <img src="images/4.png" width="" height="" alt="" />
+          </li>
+          <li style="transform: rotateY(240deg) translateZ(216px);">
+            <img src="images/5.png" width="" height="" alt="" />
+          </li>
+          <li style="transform: rotateY(300deg) translateZ(216px);">
+            <img src="images/6.png" width="" height="" alt="" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--end box-->
+    <!--start text-->
+    <div id="text">
+      <!-- 能够遇见你是我最大的幸运，有了你生活变得丰富多彩，有了你，世界变得如此迷人；你是我的世界，我的世界是你，对我来说，不是在最美好的时光遇见了你，而是遇见你后都是最美好的时光！ -->
+    </div>
+    <div style="with:100%;height:500px;position: relative">
+        <canvas id="pinkboard"></canvas>
+        <div class="love">Ｉ Lᵒᵛᵉᵧₒᵤ❤ 米雪</div>
+    </div>
+    <!--end text-->
+    <embed src="music.mp3" hidden="true" />
+
+    <script src="js/jquery.min.js"></script>
+    <!--雪花-->
+    <script src="js/snow.js"></script>
+    <script>
+      $('.pic ul li').each(function(i) {
+        //遍历
+        var deg = 360 / $('.pic ul li').size() //size个数
+        //当前的li对象 添加css样式
+        $(this).css({
+          transform: 'rotateY(' + deg * i + 'deg) translateZ(216px)'
+        })
+
+        $.fn.snow({
+          minSize: 10,
+          maxSize: 15,
+          newOn: 500,
+          flakeColor: '#ffffff'
+        })
+      })
+
+      var l = 0
+      var str =
+        '能够遇见你是我最大的幸运，有了你生活变得丰富多彩，有了你，世界变得如此迷人；你是我的世界，我的世界是你，对我来说，不是在最美好的时光遇见了你，而是遇见你后都是最美好的时光！'
+
+      window.onload = function typing() {
+        //获取div
+        var mydiv = document.getElementById('text')
+        mydiv.innerHTML += str.charAt(l)
+        l++
+        var id = setTimeout(typing, 100)
+        if (l == str.length) {
+          clearTimeout(id)
+        }
+      }
+    </script>
+    <script>
+/*
+ * Settings
+ */
+var settings = {
+  particles: {
+    length:   500, // maximum amount of particles
+    duration:   2, // particle duration in sec
+    velocity: 100, // particle velocity in pixels/sec
+    effect: -0.75, // play with this for a nice effect
+    size:      30, // particle size in pixels
+  },
+};
+
+/*
+ * RequestAnimationFrame polyfill by Erik M?ller
+ */
+(function(){var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}());
+
+/*
+ * Point class
+ */
+var Point = (function() {
+  function Point(x, y) {
+    this.x = (typeof x !== 'undefined') ? x : 0;
+    this.y = (typeof y !== 'undefined') ? y : 0;
+  }
+  Point.prototype.clone = function() {
+    return new Point(this.x, this.y);
+  };
+  Point.prototype.length = function(length) {
+    if (typeof length == 'undefined')
+      return Math.sqrt(this.x * this.x + this.y * this.y);
+    this.normalize();
+    this.x *= length;
+    this.y *= length;
+    return this;
+  };
+  Point.prototype.normalize = function() {
+    var length = this.length();
+    this.x /= length;
+    this.y /= length;
+    return this;
+  };
+  return Point;
+})();
+
+/*
+ * Particle class
+ */
+var Particle = (function() {
+  function Particle() {
+    this.position = new Point();
+    this.velocity = new Point();
+    this.acceleration = new Point();
+    this.age = 0;
+  }
+  Particle.prototype.initialize = function(x, y, dx, dy) {
+    this.position.x = x;
+    this.position.y = y;
+    this.velocity.x = dx;
+    this.velocity.y = dy;
+    this.acceleration.x = dx * settings.particles.effect;
+    this.acceleration.y = dy * settings.particles.effect;
+    this.age = 0;
+  };
+  Particle.prototype.update = function(deltaTime) {
+    this.position.x += this.velocity.x * deltaTime;
+    this.position.y += this.velocity.y * deltaTime;
+    this.velocity.x += this.acceleration.x * deltaTime;
+    this.velocity.y += this.acceleration.y * deltaTime;
+    this.age += deltaTime;
+  };
+  Particle.prototype.draw = function(context, image) {
+    function ease(t) {
+      return (--t) * t * t + 1;
+    }
+    var size = image.width * ease(this.age / settings.particles.duration);
+    context.globalAlpha = 1 - this.age / settings.particles.duration;
+    context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+  };
+  return Particle;
+})();
+
+/*
+ * ParticlePool class
+ */
+var ParticlePool = (function() {
+  var particles,
+      firstActive = 0,
+      firstFree   = 0,
+      duration    = settings.particles.duration;
+  
+  function ParticlePool(length) {
+    // create and populate particle pool
+    particles = new Array(length);
+    for (var i = 0; i < particles.length; i++)
+      particles[i] = new Particle();
+  }
+  ParticlePool.prototype.add = function(x, y, dx, dy) {
+    particles[firstFree].initialize(x, y, dx, dy);
+    
+    // handle circular queue
+    firstFree++;
+    if (firstFree   == particles.length) firstFree   = 0;
+    if (firstActive == firstFree       ) firstActive++;
+    if (firstActive == particles.length) firstActive = 0;
+  };
+  ParticlePool.prototype.update = function(deltaTime) {
+    var i;
+    
+    // update active particles
+    if (firstActive < firstFree) {
+      for (i = firstActive; i < firstFree; i++)
+        particles[i].update(deltaTime);
+    }
+    if (firstFree < firstActive) {
+      for (i = firstActive; i < particles.length; i++)
+        particles[i].update(deltaTime);
+      for (i = 0; i < firstFree; i++)
+        particles[i].update(deltaTime);
+    }
+    
+    // remove inactive particles
+    while (particles[firstActive].age >= duration && firstActive != firstFree) {
+      firstActive++;
+      if (firstActive == particles.length) firstActive = 0;
+    }
+    
+    
+  };
+  ParticlePool.prototype.draw = function(context, image) {
+    // draw active particles
+    if (firstActive < firstFree) {
+      for (i = firstActive; i < firstFree; i++)
+        particles[i].draw(context, image);
+    }
+    if (firstFree < firstActive) {
+      for (i = firstActive; i < particles.length; i++)
+        particles[i].draw(context, image);
+      for (i = 0; i < firstFree; i++)
+        particles[i].draw(context, image);
+    }
+  };
+  return ParticlePool;
+})();
+
+/*
+ * Putting it all together
+ */
+(function(canvas) {
+  var context = canvas.getContext('2d'),
+      particles = new ParticlePool(settings.particles.length),
+      particleRate = settings.particles.length / settings.particles.duration, // particles/sec
+      time;
+  
+  // get point on heart with -PI <= t <= PI
+  function pointOnHeart(t) {
+    return new Point(
+      160 * Math.pow(Math.sin(t), 3),
+      130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+    );
+  }
+  
+  // creating the particle image using a dummy canvas
+  var image = (function() {
+    var canvas  = document.createElement('canvas'),
+        context = canvas.getContext('2d');
+    canvas.width  = settings.particles.size;
+    canvas.height = settings.particles.size;
+    // helper function to create the path
+    function to(t) {
+      var point = pointOnHeart(t);
+      point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
+      point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+      return point;
+    }
+    // create the path
+    context.beginPath();
+    var t = -Math.PI;
+    var point = to(t);
+    context.moveTo(point.x, point.y);
+    while (t < Math.PI) {
+      t += 0.01; // baby steps!
+      point = to(t);
+      context.lineTo(point.x, point.y);
+    }
+    context.closePath();
+    // create the fill
+    context.fillStyle = '#ea80b0';
+    context.fill();
+    // create the image
+    var image = new Image();
+    image.src = canvas.toDataURL();
+    return image;
+  })();
+  
+  // render that thing!
+  function render() {
+    // next animation frame
+    requestAnimationFrame(render);
+    
+    // update time
+    var newTime   = new Date().getTime() / 1000,
+        deltaTime = newTime - (time || newTime);
+    time = newTime;
+    
+    // clear canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // create new particles
+    var amount = particleRate * deltaTime;
+    for (var i = 0; i < amount; i++) {
+      var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+      var dir = pos.clone().length(settings.particles.velocity);
+      particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+    }
+    
+    // update and draw particles
+    particles.update(deltaTime);
+    particles.draw(context, image);
+  }
+  
+  // handle (re-)sizing of the canvas
+  function onResize() {
+    canvas.width  = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  window.onresize = onResize;
+  
+  // delay rendering bootstrap
+  setTimeout(function() {
+    onResize();
+    render();
+  }, 10);
+})(document.getElementById('pinkboard'));</script>
+  </body>
+</html>
